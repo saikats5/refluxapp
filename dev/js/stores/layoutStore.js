@@ -4,7 +4,7 @@ import LayoutActions from '../actions/layoutAction';
 export default Reflux.createStore({
     listenables: [LayoutActions],
     getInitialState() {
-        return ["john", "steve", "bob"];
+        return this.storeadata;
     },
     storeadata: {
         isFlag: true
@@ -12,6 +12,6 @@ export default Reflux.createStore({
     testClick(){
         this.storeadata.isFlag = !this.storeadata.isFlag;
         console.log("CLICK INSIDE THE REFLUX STORE",this.storeadata.isFlag);
-        this.trigger(this.store);
+        alert("FLAG VALUE " + this.storeadata.isFlag);
     }
 })
